@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //Importing modules required for the node api
 const mysql = require('mysql');
 const express = require('express')
@@ -13,7 +12,7 @@ var mysqlConnection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
-  database: '',
+  database: 'hotel-app',
   multipleStatements: true
   });
 
@@ -42,56 +41,32 @@ var mysqlConnection = mysql.createConnection({
     next();
   })
 
-
-
-  
-//Hosting the application on the server
-const port = process.env.PORT || 3000;
-app.listen(port,()=>{
-    console.log(`Listening on port ${port}..`);
-=======
-//Importing modules required for the node api
-const mysql = require('mysql');
-const express = require('express')
-const bodyparser = require('body-parser');
-const app = express()
- 
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({extended:false}));
-
-//Establish the credentials of the database
-var mysqlConnection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: '',
-  multipleStatements: true
+//Recieve rooms from the database
+rooms = []
+app.get('/getRooms',(req,res)=>{
+  var sql = 'SELECT * FROM user';
+    mysqlConnection.query(sql, (err,rows) => {
+    if(err) throw err;
+    for(row of rows){
+      const room ={
+        id:row.Id,
+        image:row.image,
+        hotelName:row.hotelName,
+        hotelLocation:row.hotelLocation,
+        roomType:row.roomType,
+        price:row.price
+      }
+    rooms.push(room);
+    }
+  res.status(200).json({
+    message:"successfull",
+    post:rooms
+  }
+  );
+  rooms = [];
   });
-
-
- //Create a connection with the database 
-  mysqlConnection.connect((err)=> {
-    if(!err)
-    console.log('Connection Established Successfully');
-    else
-    console.log('Connection Failed!'+ JSON.stringify(err,undefined,2));
-    });
-
-//Handling CROS
-  app.use((req,res,next)=>{
-    res.setHeader(
-        "Access-Control-Allow-Origin","*"
-    );
-    res.setHeader(
-      "Access-Control-Allow-Headers",
-        "Origin,X-Requested-With,Content-Type,Accept"
-    );
-    res.setHeader(
-      "Access-Control-Allow-Methods",
-        "GET,POST,PATCH,DELETE,OPTIONS"
-    );
-    next();
-  })
+  }
+);
 
 
 
@@ -100,5 +75,4 @@ var mysqlConnection = mysql.createConnection({
 const port = process.env.PORT || 3000;
 app.listen(port,()=>{
     console.log(`Listening on port ${port}..`);
->>>>>>> 1c36706d8d6b9eed3e03d32faf1dc0ad7100d3c9
-})
+});

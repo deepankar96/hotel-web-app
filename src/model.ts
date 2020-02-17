@@ -1,5 +1,6 @@
 export interface room{
     id:number,
+    image:string,
     hotelName:string,
     hotelLocation:string,
     roomType:string,
