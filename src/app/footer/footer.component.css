@@ -1,4 +1,5 @@
-
-#sticky-footer {
-    flex-shrink: none;
-  }
+#sticky-footer{
+  position:fixed;
+  bottom:0px;
+  width: 100%;
+}

@@ -1,1 +1,30 @@
-<p>main-window works!</p>
+<mat-card>
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                <mat-panel-title>
+                    Hotel Image<br><br><br><br><br><br>
+                </mat-panel-title>
+              <mat-panel-description>
+                <div class="row">
+                    <div class="col md-3">
+                        Hotel Name
+                    </div>
+                    <div class="col md-3">
+                        Hotel Location
+                    </div>
+                    <div class="col md-3">
+                        Hotel Price
+                    </div>
+                </div>
+            </mat-panel-description>
+            </mat-expansion-panel-header>
+          
+            <p>Hotel Description</p>
+
+            <mat-action-row>
+              <button mat-button>Book</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+    </mat-accordion>
+</mat-card>
