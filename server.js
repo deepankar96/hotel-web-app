@@ -50,7 +50,7 @@ app.get('/getRooms',(req,res)=>{
     for(row of rows){
       const room ={
         id:row.id,
-        image:"http://localhost/images/"+row.image+".jpg",
+        image:row.image+".jpg",
         hotelName:row.hotelName,
         hotelLocation:row.hotelLocation,
         roomType:row.roomType,
