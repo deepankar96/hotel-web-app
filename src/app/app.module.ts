@@ -23,6 +23,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { MainWindowComponent } from './main-window/main-window.component';
+import { InnerNavComponent } from './inner-nav/inner-nav.component';
 //Miscellenious Modules
 
 
@@ -32,7 +33,8 @@ import { MainWindowComponent } from './main-window/main-window.component';
     NavbarComponent,
     FooterComponent,
     SideNavComponent,
-    MainWindowComponent
+    MainWindowComponent,
+    InnerNavComponent
   ],
   imports: [
     BrowserModule,

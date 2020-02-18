@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="main-body">
     <mat-accordion *ngIf="rooms.length>0">
         <mat-expansion-panel *ngFor="let room of rooms">
             <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
@@ -12,7 +12,7 @@
               {{room.hotelLocation}}
             </mat-panel-description>
             <mat-panel-description>
-              {{room.price}}
+              Rs:{{room.price}}
             </mat-panel-description>
             </mat-expansion-panel-header>
             <mat-divider></mat-divider>

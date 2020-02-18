@@ -6,3 +6,8 @@
 .form-inline{
     margin-left: 3%;
 }
+
+.navbar{
+    background: rgb(204,133,40);
+background: linear-gradient(90deg, rgba(204,133,40,0.6561975131849616) 7%, rgba(255,0,164,0.15199583251269255) 82%, rgba(121,9,62,0) 100%);
+}
