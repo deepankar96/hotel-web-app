@@ -1,22 +1,22 @@
 <mat-card>
-    <mat-accordion>
-        <mat-expansion-panel>
+    <mat-accordion *ngIf="rooms.length>0">
+        <mat-expansion-panel *ngFor="let room of rooms">
             <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
                 <mat-panel-title class="primary-image">
-                  <mat-card>Room Image<br><br><br><br><br><br></mat-card>
+                <img src="{{room.image}}" style="height: 200px; width: 200px;">
                 </mat-panel-title>
               <mat-panel-description>
-                  Hotel Name
+                  {{room.hotelName}}
             </mat-panel-description>
             <mat-panel-description>
-              Hotel Location
+              {{room.hotelLocation}}
             </mat-panel-description>
             <mat-panel-description>
-              Price
+              {{room.price}}
             </mat-panel-description>
             </mat-expansion-panel-header>
             <mat-divider></mat-divider>
-            <p>Hotel Description</p>
+            <p>{{room.roomType}}</p>
 
             <mat-action-row>
               <button mat-button>Book</button>

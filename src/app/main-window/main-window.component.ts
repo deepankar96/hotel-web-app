@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { room } from 'src/model';
 
 @Component({
   selector: 'app-main-window',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class MainWindowComponent implements OnInit {
 
   panelOpenState:boolean;
+  @Input() rooms:room[] = [];
 
   constructor() { }
 

@@ -44,13 +44,13 @@ var mysqlConnection = mysql.createConnection({
 //Recieve rooms from the database
 rooms = []
 app.get('/getRooms',(req,res)=>{
-  var sql = 'SELECT * FROM user';
+  var sql = 'SELECT * FROM `room-table`';
     mysqlConnection.query(sql, (err,rows) => {
     if(err) throw err;
     for(row of rows){
       const room ={
-        id:row.Id,
-        image:row.image,
+        id:row.id,
+        image:"http://localhost/images/"+row.image+".jpg",
         hotelName:row.hotelName,
         hotelLocation:row.hotelLocation,
         roomType:row.roomType,
@@ -58,6 +58,7 @@ app.get('/getRooms',(req,res)=>{
       }
     rooms.push(room);
     }
+    // res.send(rooms)
   res.status(200).json({
     message:"successfull",
     post:rooms
