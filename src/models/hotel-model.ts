@@ -4,4 +4,5 @@ export interface hotel{
     hotelName:string,
     hotelLocation:string,
     numberOfRooms:number,
+    typeofRomms:string,
 }
