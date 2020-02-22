@@ -6,6 +6,3 @@ export interface room{
     roomType:string,
     price:number,
 }
-
-expot interface user{
-}
