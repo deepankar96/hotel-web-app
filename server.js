@@ -1,6 +1,6 @@
 //Importing modules required for the node api
 const mysql = require('mysql');
-const express = require('express')
+const express = require('express');
 const bodyparser = require('body-parser');
 const app = express()
  
