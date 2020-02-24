@@ -26,6 +26,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { MainWindowComponent } from './main-window/main-window.component';
 import { InnerNavComponent } from './inner-nav/inner-nav.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { HomepageComponent } from './homepage/homepage.component';
 //Miscellenious Modules
 
 
@@ -36,7 +38,9 @@ import { InnerNavComponent } from './inner-nav/inner-nav.component';
     FooterComponent,
     SideNavComponent,
     MainWindowComponent,
-    InnerNavComponent
+    InnerNavComponent,
+    LoginPageComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
