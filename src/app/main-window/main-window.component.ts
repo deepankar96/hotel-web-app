@@ -1,5 +1,7 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { room } from 'src/model';
+import {RoomServices} from '../../services/rooms-service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-main-window',
@@ -9,11 +11,19 @@ import { room } from 'src/model';
 export class MainWindowComponent implements OnInit {
 
   panelOpenState:boolean;
-  @Input() rooms:room[] = [];
+  rooms:room[] = [];
+  private roomSub:Subscription;
 
-  constructor() { }
+
+
+  constructor(public RoomService:RoomServices) { }
 
   ngOnInit(): void {
-  }
+    this.RoomService.getroom();
+    this.roomSub = this.RoomService.getRoomListstner().subscribe(
+      (rooms:room[])=>{
+        this.rooms = rooms;
+  });
+}
 
 }
