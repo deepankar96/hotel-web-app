@@ -6,3 +6,5 @@ export interface hotel{
     numberOfRooms:number,
     typeofRomms:string,
 }
+
+//
