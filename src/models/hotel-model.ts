@@ -1,10 +1,12 @@
 export interface hotel{
-    id:number,
     image:string [],
+    hotelId:string,
     hotelName:string,
     hotelLocation:string,
-    numberOfRooms:number,
-    typeofRomms:string,
+    rooms:string [],
+    offer:string,
+    parking:string,
+    freeWifi:string,
+    roomService:string,
+    resturant:string,
 }
-
-//
